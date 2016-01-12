@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise', '~> 3.5', '>= 3.5.3'
 gem 'paperclip', '~> 4.3', '>= 4.3.2'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 
 group :development, :test do
   gem 'byebug'
