@@ -1,5 +1,9 @@
 class Movie < ActiveRecord::Base
   searchkick
+  #for Searchkick to work on Heroku
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+
   belongs_to :user
   has_many  :reviews
 

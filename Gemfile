@@ -13,6 +13,8 @@ gem 'devise', '~> 3.5', '>= 3.5.3'
 gem 'paperclip', '~> 4.3', '>= 4.3.2'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'searchkick', '~> 1.1', '>= 1.1.2'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 
 group :development, :test do
   gem 'byebug'
