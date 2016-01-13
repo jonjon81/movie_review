@@ -7,18 +7,20 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "Movie Reviews", root_path, class: "navbar-brand" %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+      <li><button type="button" class="btn btn-default btn-lg"><%= link_to "Movie Reviews", root_path, class: "navbar-brand" %></button></li>
         <% if user_signed_in? %>
-          <li><%= link_to "New Movie", new_movie_path, class: "active" %></li>
-          <li><%= link_to "Account", edit_user_registration_path %></li>
+
+          <li><button type="button" class="btn btn-default btn-lg"><%= link_to "New Movie", new_movie_path, class: "navbar-brand" %></button></li>
+          <li><button type="button" class="btn btn-default btn-lg"><%= link_to "Account", edit_user_registration_path, class: "navbar-brand"%></button></li>
+          <li><button type="button" class="btn btn-default btn-lg"><%= link_to "Sign out", destroy_user_session_path, class: "navbar-brand", method: :delete %></button></li>
         <% else %>
-          <li><%= link_to "Sign Up", new_user_registration_path, class: "active" %></li>
-          <li><%= link_to "Sign In", new_user_session_path, class: "active" %></li>
+          <li><button type="button" class="btn btn-default btn-lg"><%= link_to "Sign Up", new_user_registration_path, class: "navbar-brand" %></button></li>
+          <li><button type="button" class="btn btn-default btn-lg"><%= link_to "Sign In", new_user_session_path, class: "navbar-brand" %></button></li>
         <% end %>
       </ul>
       <%= form_tag search_movies_path, method: :get, class: "navbar-form navbar-right", role: "search" do %>

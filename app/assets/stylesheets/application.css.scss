@@ -18,7 +18,7 @@
 @import "bootstrap";
 
 body {
-  background: #AA4847;
+  background: blue;
 }
 
 .review_title {
@@ -30,4 +30,9 @@ body {
   .star-rating {
     padding-bottom: 8px;
   }
+}
+
+.navbar-default {
+    background-color: #e8edf3;
+    border-color: #e7e7e7;
 }

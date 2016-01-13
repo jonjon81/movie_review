@@ -1,6 +1,56 @@
-<h1>Editing Movie</h1>
+<div class="col-md-6 col-md-offset-3">
+  <div class="row">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1>Edit Movie</h1>
+      </div>
+        <%= form_for @movie, html: { multipart: true } do |f| %>
+          <% if @movie.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
 
-<%= render 'form' %>
+              <ul>
+              <% @movie.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+        <div class="panel-body">
+          <div class="form-group" >
+              <%= f.label :title %><br>
+              <%= f.text_field :title, class: "form-control" %>
+          </div>
+          <div class="form-group" >
+            <%= f.label :description %><br>
+            <%= f.text_area :description, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :movie_length, "Movie length (minutes)" %><br>
+            <%= f.text_field :movie_length, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :director %><br>
+            <%= f.text_field :director, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :rating %><br>
+            <%= f.select :rating, options_for_select(["G","PG","PG-13","R", "NC-17"]), {}, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :year %><br>
+            <%= f.number_field :year, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :image %><br>
+            <%= f.file_field :image, class: "form-control" %>
+          </div>
+          <div class="actions">
+            <%= f.submit %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Show', @movie %> |
-<%= link_to 'Back', movies_path %>
