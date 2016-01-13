@@ -15,6 +15,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'searchkick', '~> 1.1', '>= 1.1.2'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'byebug'
@@ -24,4 +25,5 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
+
 
