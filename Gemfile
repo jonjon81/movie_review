@@ -16,6 +16,7 @@ gem 'searchkick', '~> 1.1', '>= 1.1.2'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'rails_12factor', group: :production
+gem 'aws-sdk', '>= 2.0.0'
 
 group :development, :test do
   gem 'byebug'
